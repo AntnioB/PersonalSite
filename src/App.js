@@ -26,21 +26,23 @@ class Menu extends React.Component{
   constructor(props){
     super(props);
     this.state = {
-      pos: '0% 0%',
+      posBg: '0% 0%',
+      posImg: 'center 20%'
     };
   }
-  handleHover(x){
-    this.setState({pos: x});
+  handleHover(x, y){
+    this.setState({posBg: x, posImg: y});
   }
   render(){
     return(<div id="menu">
     <div id="menu-items">
-      <Link href="https://github.com/AntnioB" name="GitHub" onMouseOver={() => this.handleHover('0% -25%')}></Link>
-      <Link href="https://www.linkedin.com/in/antonio-brejo/" name="LinkedIn" onMouseOver={() => this.handleHover('0% -50%')}></Link>
-      <Link href="https://twitter.com/the_R3set" name="Twitter" onMouseOver={() => this.handleHover('0% -75%')}></Link>
-      <Link href="/" name="CV" onMouseOver={() => this.handleHover('0% -100%')}></Link>
+      <Link href="https://github.com/AntnioB" name="GitHub" onMouseOver={() => this.handleHover('0% -25%','center 20%')}></Link>
+      <Link href="https://www.linkedin.com/in/antonio-brejo/" name="LinkedIn" onMouseOver={() => this.handleHover('0% -50%', 'center 40%')}></Link>
+      <Link href="https://twitter.com/the_R3set" name="Twitter" onMouseOver={() => this.handleHover('0% -75%', 'center 60%')}></Link>
+      <Link href="/" name="CV" onMouseOver={() => this.handleHover('0% -100%', 'center 80%')}></Link>
     </div>
-    <div id="menu-background-pattern" style={{backgroundPosition: this.state.pos}}></div>
+    <div id="menu-background-pattern" style={{backgroundPosition: this.state.posBg}}></div>
+    <div id="menu-background-image"style={{backgroundPosition: this.state.posImg}}></div>
   </div>);
   }
 }

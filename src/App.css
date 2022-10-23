@@ -85,6 +85,22 @@ body::-webkit-scrollbar{
     background-position 800ms ease;
 }
 
+#menu-background-image {
+  background-image: url("https://wallpapercrafter.com/sizes/2560x1440/129987-198x-1980s-pixel-art-Retro-style-Hi-Bit-Studios-video-game-art-video-games-city-window-by-the-window.jpg");
+  background-size: 110vmax;
+  height: 100%;
+  left: 0px;  
+  opacity: 0.15;
+  position: absolute;
+  top: 0px;
+  transition: opacity 800ms ease,
+    background-size 800ms ease,
+    background-position 800ms ease;
+  width: 100%;
+  filter: blur(4px);
+  z-index: 0;
+}
+
 #menu-items:hover ~ #menu-background-pattern{
   background-size: 11vmin 11vmin;
   opacity: 0.5;
