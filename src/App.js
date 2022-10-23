@@ -1,71 +1,38 @@
-import logo from './logo.svg';
 import './App.css';
 import React from 'react';
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p
-          className='Timer'>
-          <Timer />
-        </p>
-        <a 
-          className='App-link'
-          href='https://github.com/AntnioB'
-          target="_blank"
-          rel="noopener noreferrer"
-          >
-            Github
-        </a>
-        <a
-          className="App-link"
-          href="https://www.linkedin.com/in/antonio-brejo/"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          LinkdIn
-        </a>
-        <a
-          className="App-link"
-          href="https://twitter.com/the_R3set"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Twitter
-        </a>
-      </header>
-    </div>
+  return(
+    <Menu></Menu>
   );
 }
 
-class Timer extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {seconds: 0};
-  }
 
-  tick() {
-    this.setState(state => ({
-      seconds: state.seconds + 1
-    }));
-  }
-
-  componentDidMount(){
-    this.interval = setInterval(()=> this.tick(), 1000);
-  }
-
-  componentWillUnmount(){
-    clearInterval(this.interval);
-  }
-
+class Link extends React.Component{
   render() {
-    return(
-      <div>
-        Seconds: {this.state.seconds}
-      </div>
-    );
+    return <a 
+    class="menu-item"
+    href={this.props.href}
+    target="_blank"
+    rel="noopener noreferrer"
+    >
+      {this.props.name}
+    </a>;
   }
 }
+
+class Menu extends React.Component{
+  render(){
+    return(<div id="menu">
+    <div id="menu-items">
+      <Link href="https://github.com/AntnioB" name="GitHub"></Link>
+      <Link href="https://www.linkedin.com/in/antonio-brejo/" name="LinkedIn"></Link>
+      <Link href="https://twitter.com/the_R3set" name="Twitter"></Link>
+      <Link href="/" name="GitHub"></Link>
+    </div>
+    <div id="menu-background-pattern"></div>
+  </div>);
+  }
+}
+
 export default App;
