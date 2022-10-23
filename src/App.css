@@ -81,7 +81,8 @@ body::-webkit-scrollbar{
   z-index: 1;
 
   transition: opacity 800ms ease,
-    background-size 800ms ease;
+    background-size 800ms ease,
+    background-position 800ms ease;
 }
 
 #menu-items:hover ~ #menu-background-pattern{
