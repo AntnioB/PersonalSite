@@ -1,5 +1,6 @@
 import './App.css';
 import React from 'react';
+import cv from './files/CV.pdf';
 
 function App() {
   return(
@@ -39,7 +40,7 @@ class Menu extends React.Component{
       <Link href="https://github.com/AntnioB" name="GitHub" onMouseOver={() => this.handleHover('0% -25%','center 20%')}></Link>
       <Link href="https://www.linkedin.com/in/antonio-brejo/" name="LinkedIn" onMouseOver={() => this.handleHover('0% -50%', 'center 40%')}></Link>
       <Link href="https://twitter.com/the_R3set" name="Twitter" onMouseOver={() => this.handleHover('0% -75%', 'center 60%')}></Link>
-      <Link href="/" name="CV" onMouseOver={() => this.handleHover('0% -100%', 'center 80%')}></Link>
+      <Link href={cv} name="CV" onMouseOver={() => this.handleHover('0% -100%', 'center 80%')}></Link>
     </div>
     <div id="menu-background-pattern" style={{backgroundPosition: this.state.posBg}}></div>
     <div id="menu-background-image"style={{backgroundPosition: this.state.posImg}}></div>
